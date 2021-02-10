@@ -1,0 +1,55 @@
+schema doc {
+  document doc {
+    field cord_uid type string {
+      indexing: summary | attribute
+    }
+    field doc_title type string {
+      indexing: summary | index
+      index: enable-bm25
+    }
+    field doc_abstract type string {
+      indexing: summary | index
+      index: enable-bm25
+    }
+    field specter_embedding type tensor<float>(x[768]) {
+      indexing: attribute | index
+      attribute {
+        distance-metric: euclidean
+      }
+      index {
+        hnsw {
+          max-links-per-node: 16
+          neighbors-to-explore-at-insert: 500
+        }
+      }
+    }
+  }
+
+  fieldset default {
+    fields: cord_uid, doc_title, doc_abstract, specter_embedding
+  }
+
+  rank-profile bm25 inherits default {
+    first-phase {
+      expression: bm25(doc_title) + bm25(doc_abstract)
+    }
+  }
+
+  rank-profile semantic-similarity inherits default {
+    first-phase {
+      expression: closeness(field, specter_embedding)
+    }
+  }
+
+  rank-profile nativeRank inherits default {
+    first-phase {
+      expression: nativeRank(doc_title)
+    }
+  }
+
+  rank-profile bm25-semantic-similarity inherits default {
+    first-phase {
+      expression: bm25(doc_title) + bm25(doc_abstract) + closeness(specter_embedding)
+    }
+  }
+}
