@@ -24,5 +24,5 @@ The `python-scripts/index/prepare-and-load-index.py` parses a CORD-19 dataset (y
 
 The `python-scripts/search/` contains two scripts, one to do a simple text search, and another to find more like this (MLT) given an input document.
 
-Together, this represents (for me) a MVP (minimal viable project) to get started with Vespa.
+Together, this represents (for me) a MVP (minimal viable "product") to get started with Vespa.
 
