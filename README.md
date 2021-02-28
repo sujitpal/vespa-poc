@@ -4,7 +4,7 @@ Small Proof of Concept to familiarize myself with [vespa.ai](https://vespa.ai/) 
 ## Usage Instructions
 
 1. Clone the vespa-engine/sample-apps repository.
-   '$ git clone https://github.com/vespa-engine/sample-apps.git'
+   `$ git clone https://github.com/vespa-engine/sample-apps.git`
 2. Copy the contents of `src/` to a subfolder given by your application name (say `vespa-poc`)
    ```
    $ cd ../sample-apps
