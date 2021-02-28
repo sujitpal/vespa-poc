@@ -26,7 +26,7 @@ The `python-scripts/search/` contains two scripts, one to do a simple text searc
 
 Together, this represents (for me) a MVP (minimal viable "product") to get started with Vespa.
 
-In addition, the `python-scripts/demo/` directory contains a Streamlit dashboard to demonstrate the functionality (search and MLT) to human users, and a FastAPI service to allow batch consumption of the service via script. FastAPI provides a built-in Swagger UI, which is very convenient to figure out how to use the API. The additional libraries necessary for running these two services are listed in [python-scripts/requirements.txt](https://github.com/sujitpal/vespa-poc/blob/main/python-scripts/requirements.txt).
+In addition, the `python-scripts/demo/` directory contains a [Streamlit](https://www.streamlit.io/) dashboard to demonstrate the functionality (search and MLT) to human users, and a [FastAPI](https://fastapi.tiangolo.com/) service to allow batch consumption of the service via script. FastAPI provides a built-in Swagger UI, which is very convenient to figure out how to use the API. The additional libraries necessary for running these two services are listed in [python-scripts/requirements.txt](https://github.com/sujitpal/vespa-poc/blob/main/python-scripts/requirements.txt).
 
 To start the Streamlit dashboard, navigate to the `demo` directory and run the following command. This will start the Streamlit service on port 8501 and you can access the dashboard on your browser at http://localhost:8501.
 
